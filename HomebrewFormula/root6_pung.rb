@@ -47,7 +47,4 @@ class Root6Pung < Formula
     Have fun!
     EOS
   end
-  def prefix_root
-    prefix+'root'
-  end
 end
