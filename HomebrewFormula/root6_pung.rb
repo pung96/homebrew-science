@@ -8,18 +8,18 @@ class Root6Pung < Formula
     (prefix+'root').install Dir["*"]
     (libexec+'set_root6.sh').write  <<-EOS.undent
       alias useroot6="source #{prefix}/root/bin/thisroot.sh;which root"
-      function root6(){ ( useroot6; exec root.exe $*)}
+      function root6(){ ( useroot6; exec root.exe "$@")}
       alias r6=root6
     EOS
     (libexec+'set_root6_pung.sh').write  <<-EOS.undent
       alias useroot6_pung="source #{prefix}/root/bin/thisroot.sh;which root"
-      function root6_pung(){ ( useroot6_pung; exec root.exe $*)}
+      function root6_pung(){ ( useroot6_pung; exec root.exe "$@")}
     EOS
     (libexec+'root6_pung').write  <<-EOS.undent
       #!/bin/bash
       source #{prefix}/root/bin/thisroot.sh
       echo "#{prefix}/root/bin/root"
-      exec #{prefix}/root/bin/root.exe $*
+      exec #{prefix}/root/bin/root.exe "$@"
     EOS
     bin.install libexec+'root6_pung'
   end

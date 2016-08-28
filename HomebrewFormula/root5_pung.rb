@@ -8,18 +8,18 @@ class Root5Pung < Formula
     (prefix+'root').install Dir["*"]
     (libexec+'set_root5.sh').write  <<-EOS.undent
       alias useroot5="source #{prefix}/root/bin/thisroot.sh;which root"
-      function root5(){ ( useroot5; exec root.exe $*)}
-      alias r6=root5
+      function root5(){ ( useroot5; exec root.exe "$@")}
+      alias r5=root5
     EOS
     (libexec+'set_root5_pung.sh').write  <<-EOS.undent
       alias useroot5_pung="source #{prefix}/root/bin/thisroot.sh;which root"
-      function root5_pung(){ ( useroot5_pung; exec root.exe $*)}
+      function root5_pung(){ ( useroot5_pung; exec root.exe "$@")}
     EOS
     (libexec+'root5_pung').write  <<-EOS.undent
       #!/bin/bash
       source #{prefix}/root/bin/thisroot.sh
       echo "#{prefix}/root/bin/root"
-      exec #{prefix}/root/bin/root.exe $*
+      exec #{prefix}/root/bin/root.exe "$@"
     EOS
     bin.install libexec+'root5_pung'
   end
@@ -39,7 +39,7 @@ class Root5Pung < Formula
        This will make
         * useroot5
         * root5
-        * r6            : alias of root5
+        * r5            : alias of root5
 
     A robust way to make them easy is just
         echo '. $(brew --prefix root5_pung)/libexec/set_root5.sh' >> ~/.bash_profile
