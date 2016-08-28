@@ -1,4 +1,4 @@
-class root5Pung < Formula
+class Root5Pung < Formula
   homepage "https://root.cern.ch"
   url "https://root.cern.ch/download/root_v5.34.36.macosx64-10.11-clang70.tar.gz"
   sha256 "6f604c04d415327f28e6a086b1e10bb10aa259325db5d4be6b2ff0062d764f4e"
