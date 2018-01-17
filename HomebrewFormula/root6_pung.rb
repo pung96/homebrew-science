@@ -1,8 +1,8 @@
 class Root6Pung < Formula
   homepage "https://root.cern.ch"
-  url "https://root.cern.ch/download/root_v6.06.08.macosx64-10.11-clang73.tar.gz"
-  sha256 "b8702b5945d788aba56c9ffe31ecba0e3364c909774666161a4c8d72e2795587"
-  version "6.06.08"
+  url "https://root.cern.ch/download/root_v6.12.04.macosx64-10.13-clang90.tar.gz"
+  sha256 "e87eedcf2c8a5fd624aeaaa856d5a298ae93138ec90e201bf23146759ef2ba67"
+  version "6.12.04"
 
   def install
     (prefix+'root').install Dir["*"]
